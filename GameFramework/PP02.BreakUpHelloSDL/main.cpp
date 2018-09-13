@@ -38,6 +38,7 @@ void render()
 
 int main(int argc, char* argv[])
 {
+	int i = 0;
 	if (init("Chapter 1 : Setting up SDL",
 		SDL_WINDOWPOS_CENTERED,
 		SDL_WINDOWPOS_CENTERED,
@@ -52,6 +53,9 @@ int main(int argc, char* argv[])
 	while (g_bRunning)
 	{
 		render();
+		i++;
+		if (i > 5)
+			g_bRunning = true;
 	}
 	// clean up SDL
 	SDL_Quit();
