@@ -33,8 +33,8 @@ void Game::render()
 {
 	m_destinationRectangle.x = m_sourceRectangle.x = 0;
 	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w;
-	m_destinationRectangle.h = m_sourceRectangle.h;
+	m_destinationRectangle.w = m_sourceRectangle.w * 2;
+	m_destinationRectangle.h = m_sourceRectangle.h * 2;
 
 	// clear the renderer to the draw color
 	SDL_RenderClear(m_pRenderer);	// draw color로 render 지우기
