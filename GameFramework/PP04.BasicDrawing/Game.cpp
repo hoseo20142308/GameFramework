@@ -32,15 +32,24 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 void Game::render()
 {
 	m_destinationRectangle.x = m_sourceRectangle.x = 0;
-	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w * 2;
-	m_destinationRectangle.h = m_sourceRectangle.h * 2;
+	m_destinationRectangle.y = m_sourceRectangle.y = 0;	
+
+	m_destinationRectangle.w = m_sourceRectangle.w;
+	m_destinationRectangle.h = m_sourceRectangle.h;
+	
+	m_sourceRectangle.x = 61;
+	m_sourceRectangle.y = 43;
+
+	m_destinationRectangle.x = 100;
+	m_destinationRectangle.y = 100;
 
 	// clear the renderer to the draw color
 	SDL_RenderClear(m_pRenderer);	// draw color로 render 지우기
+
 	// 원본 사각형과 대상 사각형의 위치와 크기에 따라 화면에 다르게 나타남...
 	SDL_RenderCopy(m_pRenderer, m_pTexture,
 					&m_sourceRectangle, &m_destinationRectangle);
+
 	SDL_RenderPresent(m_pRenderer);	// 화면 제시하기
 }
 
